@@ -5,11 +5,11 @@
     (
         [Parameter(Mandatory=$true, Position=0)]
         [System.String]
-        $ISOFilePath,
+        $ISOFilePath = 'c:\_Workingfolder\NAV_CU14199.iso',
         
         [Parameter(Mandatory=$true, Position=2)]
         [System.String]
-        $Log
+        $Log = 'C:\LogExportAllObjects'
 
     )
     process
