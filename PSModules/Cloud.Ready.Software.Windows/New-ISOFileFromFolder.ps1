@@ -5,11 +5,11 @@
     #>
     param(
         [Parameter(Mandatory=$true)]
-        [String]$FilePath,
+        [String]$FilePath = 'C:\_Workingfolder\NAV_CU14199_W1_DVD',
         [Parameter(Mandatory=$true)]
-        [String]$Name,
+        [String]$Name ='NAV_CU14199',
         [Parameter(Mandatory=$true)]
-        [String]$ResultFullFileName
+        [String]$ResultFullFileName = 'C:\_Workingfolder\NAV_CU14199.iso'
     )
     write-host "Creating ISO $Name" -ForegroundColor Green  
 

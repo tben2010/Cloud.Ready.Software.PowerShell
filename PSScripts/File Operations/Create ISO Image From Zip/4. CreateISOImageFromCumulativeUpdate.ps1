@@ -1,7 +1,7 @@
-﻿$ZipFIle = "D:\Installs\493023_NLD_i386_zip.exe"
+﻿$ZipFIle = "C:\_Workingfolder\NAV.10.0.14199.W1.DVD.zip"
 
-$TmpLocation = 'D:\Temp'
-$IsoDirectory = 'D:\Installs\'
+$TmpLocation = 'C:\Temp'
+$IsoDirectory = 'C:\_Workingfolder\'
 
 $IsoFile = 
     New-NAVCumulativeUpdateISOFile `
