@@ -7,6 +7,10 @@
         [Parameter(Mandatory=$True, ValueFromPipelineByPropertyname=$true)]
         [System.String]
         $ServerInstance,
+
+        [Parameter(Mandatory=$false)]
+        [System.String]
+        $BackUpPath, 
         
         [Parameter(Mandatory=$false)]
         [int] 
@@ -29,8 +33,13 @@
         $RegKey  = $BaseReg.OpenSubKey('SOFTWARE\\Microsoft\\Microsoft SQL Server\\Instance Names\\SQL')
         $SQLinstancename = $RegKey.GetValue($DatabaseInstance)
         $RegKey  = $BaseReg.OpenSubKey("SOFTWARE\\Microsoft\\Microsoft SQL Server\\$SQLInstancename\\MSSQLServer")
-        $Backuplocation = $RegKey.GetValue('BackupDirectory')
-    
+
+        if (-Not $BackUpPath) {
+         $Backuplocation = $RegKey.GetValue('BackupDirectory')    
+        }else{
+            $Backuplocation = $BackUpPath
+        }
+            
         $BackupFile = "$ServerInstance.bak"
         $BackupFileFullPath = Join-Path $Backuplocation $BackupFile
     
