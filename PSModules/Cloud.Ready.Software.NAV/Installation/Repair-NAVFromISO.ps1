@@ -9,7 +9,7 @@
         
         [Parameter(Mandatory=$true, Position=2)]
         [System.String]
-        $Log = 'C:\LogExportAllObjects'
+        $Log = 'c:\Temp\'
 
     )
     process
